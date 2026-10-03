@@ -66,7 +66,6 @@ document.getElementById('commandBtn').onclick=()=>{document.getElementById('comm
 document.getElementById('closeCommand').onclick=()=>document.getElementById('commandModal').classList.add('hidden');
 document.querySelectorAll('[data-command]').forEach(b=>b.onclick=()=>{view=b.dataset.command;document.getElementById('commandModal').classList.add('hidden');render()});
 document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset local progression?')){localStorage.removeItem(SAVE_KEY);localStorage.removeItem(AUTH_KEY);state=load();view='overview';render();document.getElementById('authGate').classList.remove('hidden');toast('Save reset.')}};
-document.getElementById('demoAccount').onclick=()=>{const name=document.getElementById('accountName').value.trim();if(name.length<2){toast('Enter a game name first.');document.getElementById('accountName').focus();return}state.name=name;state.playerId=generatePlayerId();state.role='player';state.accountCreatedAt ||= Date.now();save();localStorage.setItem(AUTH_KEY,'demo');document.getElementById('authGate').classList.add('hidden');render();toast(`Account ready: ${state.name} [${state.playerId}]`)};
 document.querySelector('.avatar').onclick=()=>document.getElementById('authGate').classList.remove('hidden');
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('commandBtn').click()}});
 try{render()}catch(error){console.error('[gore-wars] startup render failed',error)}
