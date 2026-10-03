@@ -19,6 +19,19 @@ The supplied Blackharbor key art is used as the account-entry backdrop and is tr
 
 Google credential JSON files are ignored by Git. Store their values in Vercel environment variables; never commit the JSON file.
 
+## Production Google sign-in
+
+The Vercel functions under `api/auth/` implement the OAuth start, callback, and signed-session lookup. Configure these Vercel variables for **Production** (and Preview if you want preview deployments to sign in):
+
+```text
+GOOGLE_CLIENT_ID=...apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=...
+GOOGLE_REDIRECT_URI=https://gore-wars.vercel.app/api/auth/google/callback
+SESSION_SECRET=<long random private value>
+```
+
+In Google Cloud, the authorized JavaScript origin is `https://gore-wars.vercel.app` and the authorized redirect URI is exactly `https://gore-wars.vercel.app/api/auth/google/callback`. Redeploy after changing either Google settings or Vercel variables.
+
 ## Account entry
 
 New visitors see the account gate. **Continue with Google** is the production entry point, but requires a server-side Google OAuth client ID, redirect handler, verified callback, and secure session cookie. The included local demo button is only for previewing the slice and never accepts Google credentials.
