@@ -1,0 +1,1914 @@
+{
+  "schemaVersion": 1,
+  "game": "Gore-Wars",
+  "title": "Shop and city-service artwork placement specification",
+  "status": "Proposed integration map; source assets inspected, application routes and backend bindings not verified.",
+  "sourceArchives": [
+    "Gore-Wars_All_32_Shop_Artworks.zip",
+    "Gore-Wars_Web_Ready_Shop_Art.zip"
+  ],
+  "sourceArchiveRoot": "Gore-Wars_Shop_Art/",
+  "sourceManifest": "Gore-Wars_Shop_Art/manifest.json",
+  "sourceAssetVerification": {
+    "fullBannersPng": 32,
+    "fullBannersWebp": 32,
+    "transparentEmblemsPng": 32,
+    "bannerWidth": 1920,
+    "bannerHeight": 1080,
+    "emblemWidth": 710,
+    "emblemHeight": 720
+  },
+  "proposedPublicBase": "/assets/gore-wars/locations/",
+  "routingRule": "Reuse established equivalent routes and stable database IDs; migrate presentation bindings rather than duplicating systems.",
+  "runtimeRule": "Use explicit source filenames; no array-position or guessed-slug filename matching. The web-ready archive omits PNG masters.",
+  "locations": [
+    {
+      "id": "gw-location-01",
+      "artworkIndex": 1,
+      "name": "Ironline Armory",
+      "category": "Weapons & equipment",
+      "tagline": "Make every move count.",
+      "sourceDistrict": "FOUNDRY WARD",
+      "districtDisplayName": "Foundry Ward",
+      "districtSlug": "foundry-ward",
+      "sourceAssets": {
+        "masterPng": "png/01_ironline-armory.png",
+        "webp": "webp/01_ironline-armory.webp",
+        "emblemPng": "icons/01_ironline-armory_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "c25638c0eeb9bf87f5d8496b22b7739a8b58e10dc120a0650984a952fafb6ae4",
+        "webp": "02d73c17228a4ccf0b804161fca44b463dee7e5aec6306ee8b4ed62f0a8393f6",
+        "emblem": "7690b4704b82143578c639ddebfb91f2fd4cab5a98312264cce872e6f774ad3a"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/01_ironline-armory.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/01_ironline-armory_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/ironline-armory",
+      "proposedModuleKey": "npcWeaponsShop",
+      "directoryGroup": "Equipment",
+      "secondaryEntrypoints": [
+        "Inventory → Equipment",
+        "Combat → Resupply"
+      ],
+      "primaryPlacement": "Weapon-shop page: display this hero above the weapon catalog, ammunition filters, and purchase controls. Use the emblem for the Foundry Ward marker and equipment-resupply links.",
+      "specialRule": "Keep individual weapon thumbnails separate; this banner is the shop identity, not an item image.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-02",
+      "artworkIndex": 2,
+      "name": "Bastion Supply",
+      "category": "Armor & tactical gear",
+      "tagline": "Built to take the hit.",
+      "sourceDistrict": "WARDEN'S GATE",
+      "districtDisplayName": "Warden’s Gate",
+      "districtSlug": "wardens-gate",
+      "sourceAssets": {
+        "masterPng": "png/02_bastion-supply.png",
+        "webp": "webp/02_bastion-supply.webp",
+        "emblemPng": "icons/02_bastion-supply_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "2aef9c8638df7438d13d6d8a9555c2ba9fa9475bd736045d72fcd174f98d8824",
+        "webp": "d44519cdee104990b56ce107bad4b5d1118c3a7f3c8e94fec77a59809b542e77",
+        "emblem": "888358fefabac0ec60bf2e03cbd043c46b3b88acb4eb3dabebc80b647be1d5d8"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/02_bastion-supply.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/02_bastion-supply_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/bastion-supply",
+      "proposedModuleKey": "npcArmorShop",
+      "directoryGroup": "Equipment",
+      "secondaryEntrypoints": [
+        "Inventory → Armor",
+        "Combat → Protection"
+      ],
+      "primaryPlacement": "Armor and tactical-equipment shop: place the hero above armor slots, protection comparisons, fitting, and purchase controls. Link from equipment screens.",
+      "specialRule": "Do not use it as a faction-armory header or introduce medieval armor.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-03",
+      "artworkIndex": 3,
+      "name": "Dockside General",
+      "category": "Tools & essentials",
+      "tagline": "The city runs on the basics.",
+      "sourceDistrict": "RUSTWATER DOCKS",
+      "districtDisplayName": "Rustwater Docks",
+      "districtSlug": "rustwater-docks",
+      "sourceAssets": {
+        "masterPng": "png/03_dockside-general.png",
+        "webp": "webp/03_dockside-general.webp",
+        "emblemPng": "icons/03_dockside-general_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "121d65ac38dc1eb23c6b34e135ef50e78ef002d8ac290468357ae22939e1c19b",
+        "webp": "7bc9f84dabd7c036c01882ff77a07ac77edf890b420711dbc42f500cc8459611",
+        "emblem": "37e92faf07187908d9bfd5d9a4112c895f0e7c603f54f203f5fef50ac1c323cc"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/03_dockside-general.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/03_dockside-general_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/dockside-general",
+      "proposedModuleKey": "npcGeneralShop",
+      "directoryGroup": "Supplies",
+      "secondaryEntrypoints": [
+        "Crimes → Required tools",
+        "Inventory → Supplies"
+      ],
+      "primaryPlacement": "General hardware and tools shop: place above the tools, containers, and everyday supply catalog. Contextual links may filter for a required tool.",
+      "specialRule": "A link may select an item filter but must never purchase automatically.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-04",
+      "artworkIndex": 4,
+      "name": "Signal House",
+      "category": "Electronics & components",
+      "tagline": "Stay connected. Stay ahead.",
+      "sourceDistrict": "GLASS ROW",
+      "districtDisplayName": "Glass Row",
+      "districtSlug": "glass-row",
+      "sourceAssets": {
+        "masterPng": "png/04_signal-house.png",
+        "webp": "webp/04_signal-house.webp",
+        "emblemPng": "icons/04_signal-house_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "d901b0509b15d675bfd1b3662d5c30e59c62e742afc2843a4b7cc9e4acbc94d4",
+        "webp": "173d66e60c55dbd02ef128b9ad2b959ca697c53b0cb81a86aecffbe805efadfe",
+        "emblem": "080c53d154492a60ce29b23f05415da56972a37e2117f9e823ce06e310489089"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/04_signal-house.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/04_signal-house_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/signal-house",
+      "proposedModuleKey": "npcElectronicsShop",
+      "directoryGroup": "Supplies",
+      "secondaryEntrypoints": [
+        "Crimes → Simulated rig components",
+        "Inventory → Electronics"
+      ],
+      "primaryPlacement": "Electronics and component shop: place above fictional rig parts, device components, and electronics categories; link from simulated crime-rig upgrade screens.",
+      "specialRule": "This is an in-game supplier, not an external hacking service or instructions screen.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-05",
+      "artworkIndex": 5,
+      "name": "Glass Row Jewelers",
+      "category": "Jewelry & valuables",
+      "tagline": "Some power needs no introduction.",
+      "sourceDistrict": "GLASS ROW",
+      "districtDisplayName": "Glass Row",
+      "districtSlug": "glass-row",
+      "sourceAssets": {
+        "masterPng": "png/05_glass-row-jewelers.png",
+        "webp": "webp/05_glass-row-jewelers.webp",
+        "emblemPng": "icons/05_glass-row-jewelers_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "b4f8ba6f1e39a549db5a4712ad7c7cf3dc6824f4d772e69e84809c7182004db3",
+        "webp": "1ac3a3e23168b27220050235d2fc56867c6ec9423a52260bf07388ccabd8c027",
+        "emblem": "0576a40497b263399174fccac4495d5f94b50d29f09fab059c451080b6d8dc82"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/05_glass-row-jewelers.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/05_glass-row-jewelers_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/glass-row-jewelers",
+      "proposedModuleKey": "npcJewelryShop",
+      "directoryGroup": "Lifestyle & Collectibles",
+      "secondaryEntrypoints": [
+        "Relationships → Rings",
+        "Inventory → Valuables"
+      ],
+      "primaryPlacement": "Jewelry and valuables shop: hero above rings, watches, jewelry, and eligible gift selections. Use its emblem in ring-purchase links.",
+      "specialRule": "Do not imply items confer new statistics unless the existing catalog specifies them.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-06",
+      "artworkIndex": 6,
+      "name": "Redline Parts",
+      "category": "Vehicle parts & tuning",
+      "tagline": "Leave the rest behind.",
+      "sourceDistrict": "FOUNDRY WARD",
+      "districtDisplayName": "Foundry Ward",
+      "districtSlug": "foundry-ward",
+      "sourceAssets": {
+        "masterPng": "png/06_redline-parts.png",
+        "webp": "webp/06_redline-parts.webp",
+        "emblemPng": "icons/06_redline-parts_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "278a2630abc7920d142ed8215a9a1c1a831c7d69616072ce97b7c94289d17649",
+        "webp": "903251923f9808887827b048790704e8cd1286bc783bbb7e2c24f503a4bad4fa",
+        "emblem": "e4f63eef1c96679a1a8e61a4734ba05e2606654426b71e5ed4a5f57c9205f3bf"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/06_redline-parts.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/06_redline-parts_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/garage/parts",
+      "proposedModuleKey": "vehiclePartsShop",
+      "directoryGroup": "Vehicles & Travel",
+      "secondaryEntrypoints": [
+        "Garage → Parts",
+        "Racing → Vehicle setup"
+      ],
+      "primaryPlacement": "Parts and tuning supplier: hero on the garage parts storefront, above the selected vehicle, compatibility filters, upgrade offers, and installation controls.",
+      "specialRule": "Do not replace the racing-results header or vehicle thumbnails with this banner.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-07",
+      "artworkIndex": 7,
+      "name": "Saint Vey Pharmacy",
+      "category": "Medical supplies",
+      "tagline": "Another chance starts here.",
+      "sourceDistrict": "SAINT VEY",
+      "districtDisplayName": "Saint Vey",
+      "districtSlug": "saint-vey",
+      "sourceAssets": {
+        "masterPng": "png/07_saint-vey-pharmacy.png",
+        "webp": "webp/07_saint-vey-pharmacy.webp",
+        "emblemPng": "icons/07_saint-vey-pharmacy_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "d9c4d6655b22be0c6b8cb0d3148a30e4940402578b1ebdf5647d9eff4d02eed5",
+        "webp": "2e64a60fb179643bedeb5fd709091053081317bbf8ad3ec14901f99ba262990c",
+        "emblem": "9ece717f5371b93d39563a394359da8408a63cd3d8f757e9e4dff21b95920fb0"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/07_saint-vey-pharmacy.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/07_saint-vey-pharmacy_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/saint-vey-pharmacy",
+      "proposedModuleKey": "npcMedicalShop",
+      "directoryGroup": "Supplies",
+      "secondaryEntrypoints": [
+        "Hospital → Medical supplies",
+        "Inventory → Medicine"
+      ],
+      "primaryPlacement": "Medical-supply storefront: hero above eligible medicines, first-aid items, and cooldown information. Add a pharmacy shortcut from treatment and hospital pages.",
+      "specialRule": "It is not the hospital itself; opening or buying from the shop must not automatically heal a player.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-08",
+      "artworkIndex": 8,
+      "name": "Blackharbor Post",
+      "category": "Parcels & deliveries",
+      "tagline": "Every package has a destination.",
+      "sourceDistrict": "ASHMARKET",
+      "districtDisplayName": "Ashmarket",
+      "districtSlug": "ashmarket",
+      "sourceAssets": {
+        "masterPng": "png/08_blackharbor-post.png",
+        "webp": "webp/08_blackharbor-post.webp",
+        "emblemPng": "icons/08_blackharbor-post_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "404ad667ac7292e053cd5ace1baad7d407c0ebbf1e7ceaf508a79b92a6cbec6c",
+        "webp": "3d90727c523bd35eb021b72fcff77d52e3d3eb9446f6a8d212c82c654acef636",
+        "emblem": "f45c0655c4ef1e887316cafb3faae30d628716af8e66ff335f20f97422a16e26"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/08_blackharbor-post.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/08_blackharbor-post_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/city/post-office",
+      "proposedModuleKey": "parcelService",
+      "directoryGroup": "City Services",
+      "secondaryEntrypoints": [
+        "Inventory → Send parcel",
+        "Friends → Send gift"
+      ],
+      "primaryPlacement": "Parcel service: hero above recipient selection, owned-item selection, delivery fees, confirmation, and parcel history.",
+      "specialRule": "Keep private text messages in Messages; never turn a decorative envelope into a send action without confirmation.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-09",
+      "artworkIndex": 9,
+      "name": "Inkhouse Printworks",
+      "category": "Printing & supplies",
+      "tagline": "Put your name on the city.",
+      "sourceDistrict": "THE CUT",
+      "districtDisplayName": "The Cut",
+      "districtSlug": "the-cut",
+      "sourceAssets": {
+        "masterPng": "png/09_inkhouse-printworks.png",
+        "webp": "webp/09_inkhouse-printworks.webp",
+        "emblemPng": "icons/09_inkhouse-printworks_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "29a5b788a0ba476285ec32ba90902aa2f1f49b3bc00c621f81f41a9022d72dfa",
+        "webp": "14e7fc8ce5dba3621e08c9406b7ea134e3d530145bbf3cbfa84921d5ce4c6b38",
+        "emblem": "85ffa94585c968212d8f1438897268c9272ffa741f7d0fefbdf9ac40fd3c2dda"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/09_inkhouse-printworks.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/09_inkhouse-printworks_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/inkhouse-printworks",
+      "proposedModuleKey": "npcPrintingShop",
+      "directoryGroup": "Supplies",
+      "secondaryEntrypoints": [
+        "Crimes → Printing supplies",
+        "Newspaper → Printing service, when implemented"
+      ],
+      "primaryPlacement": "Printing-supply shop: hero above paper, ink, printing materials, and supported in-game print services.",
+      "specialRule": "Do not replace The Blackharbor Ledger newspaper brand or claim a printing backend exists when it does not.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-10",
+      "artworkIndex": 10,
+      "name": "Quarry Recycling",
+      "category": "Materials & recycling",
+      "tagline": "Nothing useful goes to waste.",
+      "sourceDistrict": "QUARRY REACH",
+      "districtDisplayName": "Quarry Reach",
+      "districtSlug": "quarry-reach",
+      "sourceAssets": {
+        "masterPng": "png/10_quarry-recycling.png",
+        "webp": "webp/10_quarry-recycling.webp",
+        "emblemPng": "icons/10_quarry-recycling_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "0ff990d70ac911343a72a393d5faa546f34fed3c924b37ec8c5908adc6661141",
+        "webp": "6869d2d2f2a36ba3a2b036cd7be027e710385fce6fa0c5f6cbb4c9b6f2a248de",
+        "emblem": "7a9f05d459c295fff284ff928a5fd7c058a084156c1fa8c0c198d910c4aa9893"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/10_quarry-recycling.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/10_quarry-recycling_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/city/recycling",
+      "proposedModuleKey": "recyclingService",
+      "directoryGroup": "City Services",
+      "secondaryEntrypoints": [
+        "Inventory → Recycle",
+        "Crafting/materials → Recycling"
+      ],
+      "primaryPlacement": "Recycling facility: hero above owned-material selection, yield previews, exchange costs, and confirmation.",
+      "specialRule": "Keep recycling distinct from salvaging or buying scrap. Consumption must use the existing inventory transaction service.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-11",
+      "artworkIndex": 11,
+      "name": "Sweet Static",
+      "category": "Candy & confectionery",
+      "tagline": "A little sugar. A little escape.",
+      "sourceDistrict": "NEON MILE",
+      "districtDisplayName": "Neon Mile",
+      "districtSlug": "neon-mile",
+      "sourceAssets": {
+        "masterPng": "png/11_sweet-static.png",
+        "webp": "webp/11_sweet-static.webp",
+        "emblemPng": "icons/11_sweet-static_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "a8655362c72909d7472c3032f888fd2e24168af8c763c71f7deda03f025ff839",
+        "webp": "67b91bf2bb738c28433d337454986b35fe08706ed406353573535591db986aca",
+        "emblem": "c46d967c15b47c1ef71b4f508bc6922f78c3b7b41417ebc81e843228bbaa4355"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/11_sweet-static.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/11_sweet-static_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/sweet-static",
+      "proposedModuleKey": "npcCandyShop",
+      "directoryGroup": "Supplies",
+      "secondaryEntrypoints": [
+        "Inventory → Candy",
+        "Morale → Eligible consumables"
+      ],
+      "primaryPlacement": "Candy and confectionery shop: hero above candy products and their existing in-game effects.",
+      "specialRule": "Do not invent new refill bonuses, resource caps, or cooldown exemptions from the image tagline.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-12",
+      "artworkIndex": 12,
+      "name": "Nightshift Outfitters",
+      "category": "Clothing & accessories",
+      "tagline": "Dress for the city after dark.",
+      "sourceDistrict": "THE CUT",
+      "districtDisplayName": "The Cut",
+      "districtSlug": "the-cut",
+      "sourceAssets": {
+        "masterPng": "png/12_nightshift-outfitters.png",
+        "webp": "webp/12_nightshift-outfitters.webp",
+        "emblemPng": "icons/12_nightshift-outfitters_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "bc35e0432e9fb2093377be30831754b4f7ddff518846af90fd689d2d0e016421",
+        "webp": "1b30fab207365937953dc9884eda4e72303f05b9a3bb60b3abb58666f1a29c2a",
+        "emblem": "9a9ddc404c1f6d4b19070949085ef4d377c74850ab4a440bc9c42e8d2fcacf35"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/12_nightshift-outfitters.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/12_nightshift-outfitters_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/nightshift-outfitters",
+      "proposedModuleKey": "npcClothingShop",
+      "directoryGroup": "Lifestyle & Collectibles",
+      "secondaryEntrypoints": [
+        "Profile → Clothing",
+        "Inventory → Appearance"
+      ],
+      "primaryPlacement": "Clothing and accessories storefront: hero above clothing categories, fitting/preview, and eligible purchases.",
+      "specialRule": "Keep this earned-game-currency shop separate from any paid supporter shop and its nontransferable entitlements.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-13",
+      "artworkIndex": 13,
+      "name": "The Iron Vault",
+      "category": "Specialist gear exchange",
+      "tagline": "Trade the ordinary. Find the rare.",
+      "sourceDistrict": "FOUNDRY WARD",
+      "districtDisplayName": "Foundry Ward",
+      "districtSlug": "foundry-ward",
+      "sourceAssets": {
+        "masterPng": "png/13_the-iron-vault.png",
+        "webp": "webp/13_the-iron-vault.webp",
+        "emblemPng": "icons/13_the-iron-vault_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "bebf86fa3dd3417e851d67851807ebec7d3b902e16248ff99f71720410e56944",
+        "webp": "445ed8f574fe58ec984f3a68e7a848c7dfdda78643644afd8e17baf8e29aa4d0",
+        "emblem": "3975ef6c80503495bcde4ad98ce3c1d8504e856d89e9502914834e53723f2b37"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/13_the-iron-vault.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/13_the-iron-vault_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/the-iron-vault",
+      "proposedModuleKey": "specialistGearExchange",
+      "directoryGroup": "Equipment",
+      "secondaryEntrypoints": [
+        "Equipment → Specialist exchange",
+        "Missions → Gear rewards, when applicable"
+      ],
+      "primaryPlacement": "Specialist gear exchange: hero above rare-gear offers, required trade-ins, eligibility, and confirmation.",
+      "specialRule": "This is neither the bank nor a property/faction vault; never grant access to those systems through this page.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-14",
+      "artworkIndex": 14,
+      "name": "Rustwater Salvage",
+      "category": "Scrap & salvage",
+      "tagline": "Someone else left your next fortune.",
+      "sourceDistrict": "RUSTWATER DOCKS",
+      "districtDisplayName": "Rustwater Docks",
+      "districtSlug": "rustwater-docks",
+      "sourceAssets": {
+        "masterPng": "png/14_rustwater-salvage.png",
+        "webp": "webp/14_rustwater-salvage.webp",
+        "emblemPng": "icons/14_rustwater-salvage_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "062359c8c6f8d528cfd2002ef27e7fd20b72934cef19435c3b35a2643655b13b",
+        "webp": "0e4977cfdf7f140be501487e09b9903e39e49d91ec19c980b9fada028aa1ebbf",
+        "emblem": "d650a63a4368f02fb5f329259cdcb1e83e851433d1eb1f78df7ed090678bccee"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/14_rustwater-salvage.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/14_rustwater-salvage_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/city/salvage",
+      "proposedModuleKey": "salvageService",
+      "directoryGroup": "City Services",
+      "secondaryEntrypoints": [
+        "City → Salvage",
+        "Inventory → Scrap"
+      ],
+      "primaryPlacement": "Salvage yard: hero above the existing search, claim, scrap-purchase, or salvage actions and their eligibility/cooldowns.",
+      "specialRule": "Do not assume all these actions exist; bind only implemented ones and keep them separate from recycling.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-15",
+      "artworkIndex": 15,
+      "name": "Last Chance Pawn",
+      "category": "Pawn & appraisal",
+      "tagline": "Everything has a price.",
+      "sourceDistrict": "LOWFIELD",
+      "districtDisplayName": "Lowfield",
+      "districtSlug": "lowfield",
+      "sourceAssets": {
+        "masterPng": "png/15_last-chance-pawn.png",
+        "webp": "webp/15_last-chance-pawn.webp",
+        "emblemPng": "icons/15_last-chance-pawn_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "5411a41ed0974178ba3041af08b7846775a595a6a5ab896f5ce7efe0048b1e2c",
+        "webp": "135eaac6c73fcd399872a47ac27595ddd3687fedd58bfd2bc0311b0d74478c46",
+        "emblem": "e51e6b6c3683b96b0adac978f52426964e304725cee4fd885ea0b3a9a87d594c"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/15_last-chance-pawn.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/15_last-chance-pawn_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/last-chance-pawn",
+      "proposedModuleKey": "pawnService",
+      "directoryGroup": "Markets & Trading",
+      "secondaryEntrypoints": [
+        "Inventory → Sell/appraise",
+        "Market → NPC buyback"
+      ],
+      "primaryPlacement": "Pawn and appraisal shop: hero above eligible owned items, NPC appraisal quotes, and sale confirmation.",
+      "specialRule": "Do not create pawn-backed loans unless that mechanic already exists in the approved specification and backend.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-16",
+      "artworkIndex": 16,
+      "name": "Ashmarket Exchange",
+      "category": "Central item market",
+      "tagline": "The city buys. The city sells.",
+      "sourceDistrict": "ASHMARKET",
+      "districtDisplayName": "Ashmarket",
+      "districtSlug": "ashmarket",
+      "sourceAssets": {
+        "masterPng": "png/16_ashmarket-exchange.png",
+        "webp": "webp/16_ashmarket-exchange.webp",
+        "emblemPng": "icons/16_ashmarket-exchange_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "c9aba73401880cedd8c87b9c21e59f6ed04215953f2b40d0a39e511a09f26b74",
+        "webp": "51858b7f5e8070adf9718a5acb4bdedce73bd0922c809e3ff1ad23135ff8273d",
+        "emblem": "a9312123f77364202f0f86095948a2b5356ae826ae6844ca4567db595e0cb672"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/16_ashmarket-exchange.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/16_ashmarket-exchange_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/market",
+      "proposedModuleKey": "centralPlayerMarket",
+      "directoryGroup": "Markets & Trading",
+      "secondaryEntrypoints": [
+        "Sidebar → Market",
+        "Inventory → List for sale"
+      ],
+      "primaryPlacement": "Central player item market: use as the market landing-page hero above search, listing filters, price information, and market tabs.",
+      "specialRule": "Keep it separate from NPC shop inventory, the points exchange, and player storefront directories.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-17",
+      "artworkIndex": 17,
+      "name": "Blackharbor Bazaar",
+      "category": "Player storefronts",
+      "tagline": "Build a name worth trading with.",
+      "sourceDistrict": "ASHMARKET",
+      "districtDisplayName": "Ashmarket",
+      "districtSlug": "ashmarket",
+      "sourceAssets": {
+        "masterPng": "png/17_blackharbor-bazaar.png",
+        "webp": "webp/17_blackharbor-bazaar.webp",
+        "emblemPng": "icons/17_blackharbor-bazaar_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "ea758e4202b7ce1fac7c4112ab4e0992d5a53740de988b5b2a73412352872643",
+        "webp": "7328ce3ce0890533a594f951511051171a877b5ecc9e35d7dafb76534f1182eb",
+        "emblem": "7e9ace34a126e8eb1389aedc0109d3692fdcd9669099873d7dd0c3705d59f14c"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/17_blackharbor-bazaar.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/17_blackharbor-bazaar_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/bazaar",
+      "proposedModuleKey": "playerStorefrontDirectory",
+      "directoryGroup": "Markets & Trading",
+      "secondaryEntrypoints": [
+        "Sidebar → Storefronts",
+        "Profile → Public storefront"
+      ],
+      "primaryPlacement": "Player storefront directory: use as the directory landing hero and optional fallback branding for a storefront without custom artwork.",
+      "specialRule": "Preserve individual player storefront names, banners, ownership, listings, and stable IDs; do not overwrite player branding.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-18",
+      "artworkIndex": 18,
+      "name": "Crown Auction House",
+      "category": "Auctions & rare finds",
+      "tagline": "The final bid changes everything.",
+      "sourceDistrict": "CROWN HEIGHTS",
+      "districtDisplayName": "Crown Heights",
+      "districtSlug": "crown-heights",
+      "sourceAssets": {
+        "masterPng": "png/18_crown-auction-house.png",
+        "webp": "webp/18_crown-auction-house.webp",
+        "emblemPng": "icons/18_crown-auction-house_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "8676db10cc614d949649641f8c2fd417dc5f3f407cffac301f1d5a62e97ee839",
+        "webp": "7ad6b3475784054a3ff8311d273a96361129fe68eeb1797783e8c5db48c2fe3c",
+        "emblem": "5d28093393fdd14c408b8a323b4b764dfdd993f2555ce7fa0d539158b849c8cf"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/18_crown-auction-house.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/18_crown-auction-house_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/auctions",
+      "proposedModuleKey": "auctionHouse",
+      "directoryGroup": "Markets & Trading",
+      "secondaryEntrypoints": [
+        "Market → Auctions",
+        "Inventory → Auction item"
+      ],
+      "primaryPlacement": "Auction-house landing page: hero above active auctions, bidding filters, listings, and the player’s auction tabs.",
+      "specialRule": "Show actual item art on lot-detail pages; the gavel emblem may identify the auction service.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-19",
+      "artworkIndex": 19,
+      "name": "Mourning Bloom",
+      "category": "Flowers & bouquets",
+      "tagline": "Even this city has a softer side.",
+      "sourceDistrict": "SAINT VEY",
+      "districtDisplayName": "Saint Vey",
+      "districtSlug": "saint-vey",
+      "sourceAssets": {
+        "masterPng": "png/19_mourning-bloom.png",
+        "webp": "webp/19_mourning-bloom.webp",
+        "emblemPng": "icons/19_mourning-bloom_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "9cfad5d2b2ac15ee6eea8d331704bfe3fcc85fc22cee26d3ad50992c700df7c6",
+        "webp": "c2d15ac42c734a2877c735f5cd71b7b50085e25b9cc126de680ce8b5d954e0a9",
+        "emblem": "a91c9be790d81805246a08d781fba1e13ea9642359a27b594b61247dc840fb91"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/19_mourning-bloom.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/19_mourning-bloom_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/mourning-bloom",
+      "proposedModuleKey": "npcFlowerShop",
+      "directoryGroup": "Lifestyle & Collectibles",
+      "secondaryEntrypoints": [
+        "Relationships → Flowers",
+        "Collections → Missing flowers"
+      ],
+      "primaryPlacement": "Florist: hero above bouquets, eligible flowers, gift selection, and collection links.",
+      "specialRule": "Do not make overseas-exclusive flowers available locally merely because this shop sells flowers.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-20",
+      "artworkIndex": 20,
+      "name": "The Paper Lantern",
+      "category": "Books & study",
+      "tagline": "Knowledge opens locked doors.",
+      "sourceDistrict": "SAINT VEY",
+      "districtDisplayName": "Saint Vey",
+      "districtSlug": "saint-vey",
+      "sourceAssets": {
+        "masterPng": "png/20_the-paper-lantern.png",
+        "webp": "webp/20_the-paper-lantern.webp",
+        "emblemPng": "icons/20_the-paper-lantern_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "a74cbdd7a7243557de7862be434609c534cb26184dd7291be593152000fb418e",
+        "webp": "a18268d04fc3a20b643a0171cdbed7843357fbecccdbf56815dbba9fb989bed1",
+        "emblem": "6c321a29e8451ebf03f3efb167fe3dc708f3be3dc92ce2bf01d7c5b9fc01bac2"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/20_the-paper-lantern.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/20_the-paper-lantern_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/the-paper-lantern",
+      "proposedModuleKey": "npcBookShop",
+      "directoryGroup": "Lifestyle & Collectibles",
+      "secondaryEntrypoints": [
+        "Education → Bookshop",
+        "Inventory → Books"
+      ],
+      "primaryPlacement": "Bookshop: hero above available books, study materials, and previews of existing reading effects.",
+      "specialRule": "It is not the education enrollment system; buying a book does not complete a course or start reading automatically.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-21",
+      "artworkIndex": 21,
+      "name": "Odd Company",
+      "category": "Gifts & plush collectibles",
+      "tagline": "Keep something worth coming home to.",
+      "sourceDistrict": "NEON MILE",
+      "districtDisplayName": "Neon Mile",
+      "districtSlug": "neon-mile",
+      "sourceAssets": {
+        "masterPng": "png/21_odd-company.png",
+        "webp": "webp/21_odd-company.webp",
+        "emblemPng": "icons/21_odd-company_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "7fe62b90d7e4db4563ca0f5f4c573a66cd5f46277a54d13e70611c4984fe30d6",
+        "webp": "77d7371da34071462103e36ba883ed949b5bc5b6d8295df53f9afc5a869d257b",
+        "emblem": "79c6f052aab81d2e929c294822982ea9d7e8a0c72acb3b2a33cf7fcfea089b84"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/21_odd-company.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/21_odd-company_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/odd-company",
+      "proposedModuleKey": "npcGiftShop",
+      "directoryGroup": "Lifestyle & Collectibles",
+      "secondaryEntrypoints": [
+        "Collections → Plush gifts",
+        "Friends → Gift selection"
+      ],
+      "primaryPlacement": "Gift and plush-collectible shop: hero above plush toys, souvenir gifts, and gift-selection interfaces.",
+      "specialRule": "Despite its name, Odd Company is not the player-company management dashboard.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-22",
+      "artworkIndex": 22,
+      "name": "The Collector's Room",
+      "category": "Prestige collectibles",
+      "tagline": "Not everything rare is for everyone.",
+      "sourceDistrict": "CROWN HEIGHTS",
+      "districtDisplayName": "Crown Heights",
+      "districtSlug": "crown-heights",
+      "sourceAssets": {
+        "masterPng": "png/22_the-collector-s-room.png",
+        "webp": "webp/22_the-collector-s-room.webp",
+        "emblemPng": "icons/22_the-collector-s-room_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "6edbc8e13139008cd73f1541f6be779dfa8ad7cbd915be12f1501791f849ba03",
+        "webp": "93f9f26ae587c0be4415478e942fd504865a2a7ce8b9232b8b5dd2e4d1c21f77",
+        "emblem": "fa9b58d1bbcb1594af2de7168bc5569b5039edf77f6b950618f02f3795cd3c3c"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/22_the-collector-s-room.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/22_the-collector-s-room_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/the-collectors-room",
+      "proposedModuleKey": "prestigeCollectibleShop",
+      "directoryGroup": "Lifestyle & Collectibles",
+      "secondaryEntrypoints": [
+        "Collections → Prestige vendor",
+        "Museum → Collector vendor"
+      ],
+      "primaryPlacement": "Prestige collectible vendor: hero above permitted rare objects, eligibility requirements, appraisal, and purchase/trade options.",
+      "specialRule": "Preserve the apostrophe in the display name, but keep the supplied asset spelling 22_the-collector-s-room exactly.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-23",
+      "artworkIndex": 23,
+      "name": "Night Owl Grocer",
+      "category": "Food & drinks",
+      "tagline": "Fuel for another night.",
+      "sourceDistrict": "THE SPRAWL",
+      "districtDisplayName": "The Sprawl",
+      "districtSlug": "the-sprawl",
+      "sourceAssets": {
+        "masterPng": "png/23_night-owl-grocer.png",
+        "webp": "webp/23_night-owl-grocer.webp",
+        "emblemPng": "icons/23_night-owl-grocer_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "4d631ca70a6cd896bdc74f7172849564e822152525ab6497127952baaade9b26",
+        "webp": "addca3768ebe51f6747e7ecdf1871e98e201c3895e64522bdcded695fe9e3dfa",
+        "emblem": "3cab36202a44bf4324eefc095373df0c4574a91f899a4a2627ea22cafa8089b0"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/23_night-owl-grocer.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/23_night-owl-grocer_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/night-owl-grocer",
+      "proposedModuleKey": "npcGroceryShop",
+      "directoryGroup": "Supplies",
+      "secondaryEntrypoints": [
+        "Inventory → Food and drinks",
+        "Morale → Grocery supplies"
+      ],
+      "primaryPlacement": "Grocery and food/drink store: hero above food, drink, and everyday consumable categories.",
+      "specialRule": "Keep separate from Sweet Static and do not grant a resource effect unless it is in the item definition.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-24",
+      "artworkIndex": 24,
+      "name": "Chrome Row Motors",
+      "category": "Vehicle dealership",
+      "tagline": "Your next chapter has an engine.",
+      "sourceDistrict": "GLASS ROW",
+      "districtDisplayName": "Glass Row",
+      "districtSlug": "glass-row",
+      "sourceAssets": {
+        "masterPng": "png/24_chrome-row-motors.png",
+        "webp": "webp/24_chrome-row-motors.webp",
+        "emblemPng": "icons/24_chrome-row-motors_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "ef2abe1a24cedf288c2511fbb251f1d34c04c3a725eac56a613755af0cf2e379",
+        "webp": "5e65d48904cdd738841cbd609fd72246e6b98653ac86a38b3bceea0fcdb3c6fe",
+        "emblem": "07295256bbc12598d45933fedcc84ac767fd3cad1dcfd1ddbffdaadb3009f62f"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/24_chrome-row-motors.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/24_chrome-row-motors_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/garage/dealership",
+      "proposedModuleKey": "vehicleDealership",
+      "directoryGroup": "Vehicles & Travel",
+      "secondaryEntrypoints": [
+        "Garage → Buy vehicle",
+        "Racing → Dealership"
+      ],
+      "primaryPlacement": "Vehicle dealership: hero above vehicle browsing, performance comparisons, prices, and purchase confirmation.",
+      "specialRule": "Do not reuse it as an individual car image or a universal garage background.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-25",
+      "artworkIndex": 25,
+      "name": "Rustwater Chandlery",
+      "category": "Dock & cargo supplies",
+      "tagline": "Everything you need beyond the shore.",
+      "sourceDistrict": "RUSTWATER DOCKS",
+      "districtDisplayName": "Rustwater Docks",
+      "districtSlug": "rustwater-docks",
+      "sourceAssets": {
+        "masterPng": "png/25_rustwater-chandlery.png",
+        "webp": "webp/25_rustwater-chandlery.webp",
+        "emblemPng": "icons/25_rustwater-chandlery_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "4b6060953f96d147cfe73df4634aa69835698534a1bb25802a018154d8e16dac",
+        "webp": "e9b71eebc53220b55344cc1fe6746fc06e614d73399f8886f8cf1bd0d21ee828",
+        "emblem": "01e3a2e276fef629819d4f96a3f52990ecb102430b6fb5a79ee1becdde36254c"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/25_rustwater-chandlery.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/25_rustwater-chandlery_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/shops/rustwater-chandlery",
+      "proposedModuleKey": "npcTravelSupplyShop",
+      "directoryGroup": "Vehicles & Travel",
+      "secondaryEntrypoints": [
+        "Travel → Cargo supplies",
+        "Docks → Provisioning"
+      ],
+      "primaryPlacement": "Dock and cargo supplier: hero above cargo containers, travel supplies, and supported luggage/provisioning items.",
+      "specialRule": "Do not add boat ownership or circumvent baggage capacity because the emblem is an anchor.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-26",
+      "artworkIndex": 26,
+      "name": "Voss Estate",
+      "category": "Property & rentals",
+      "tagline": "Own a piece of Blackharbor.",
+      "sourceDistrict": "CROWN HEIGHTS",
+      "districtDisplayName": "Crown Heights",
+      "districtSlug": "crown-heights",
+      "sourceAssets": {
+        "masterPng": "png/26_voss-estate.png",
+        "webp": "webp/26_voss-estate.webp",
+        "emblemPng": "icons/26_voss-estate_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "5f107dc1579fce7f868070a0fbc81f2e1574057e0c52e58ebc4b8475abce2e4f",
+        "webp": "e7835dc9052dd7ab92279b0620f7fe21644c20546dee296ef7e32d3f9a18b9b1",
+        "emblem": "f626bc896e6882e022623cfae41502eeab70a2059058babae14d1fb505f76adc"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/26_voss-estate.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/26_voss-estate_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/properties",
+      "proposedModuleKey": "propertyMarketplace",
+      "directoryGroup": "Finance & Property",
+      "secondaryEntrypoints": [
+        "Sidebar → Properties",
+        "Profile → Find housing"
+      ],
+      "primaryPlacement": "Property and rental marketplace: hero above sale/rental search, filters, and property-market navigation.",
+      "specialRule": "Keep actual home images on listing details and owned-property dashboards. Do not replace all houses with the agency banner.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-27",
+      "artworkIndex": 27,
+      "name": "Blackharbor Bank",
+      "category": "Banking & investments",
+      "tagline": "Protect what you have built.",
+      "sourceDistrict": "GLASS ROW",
+      "districtDisplayName": "Glass Row",
+      "districtSlug": "glass-row",
+      "sourceAssets": {
+        "masterPng": "png/27_blackharbor-bank.png",
+        "webp": "webp/27_blackharbor-bank.webp",
+        "emblemPng": "icons/27_blackharbor-bank_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "6737c2dda1fc6670b518f6ba7b46bbeeacc9dd278eb9b72d1312e8bca19d9644",
+        "webp": "2e36983de76a5165e20a2ad6ad20a416cd56593fecb201fc218314b249c6b24a",
+        "emblem": "02ca0a674bba36a4dd250db8dc415f227613668569b1403a772d431ffd3b3791"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/27_blackharbor-bank.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/27_blackharbor-bank_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/bank",
+      "proposedModuleKey": "bankingService",
+      "directoryGroup": "Finance & Property",
+      "secondaryEntrypoints": [
+        "Sidebar → Bank",
+        "Wallet → Bank"
+      ],
+      "primaryPlacement": "Bank landing page: hero above the existing account, deposit, withdrawal, investment, and maturity interfaces.",
+      "specialRule": "Do not use it for stock trading or faction finances by default. Never embed balances inside the raster image.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-28",
+      "artworkIndex": 28,
+      "name": "Blackharbor Museum",
+      "category": "Collections & exchanges",
+      "tagline": "A city is what it remembers.",
+      "sourceDistrict": "SAINT VEY",
+      "districtDisplayName": "Saint Vey",
+      "districtSlug": "saint-vey",
+      "sourceAssets": {
+        "masterPng": "png/28_blackharbor-museum.png",
+        "webp": "webp/28_blackharbor-museum.webp",
+        "emblemPng": "icons/28_blackharbor-museum_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "816bf78fbcb4a2a6af297c51fb88eccdfea350738626d0b2b177da16d7a2aba0",
+        "webp": "b991c15c184503a67e7352c85d03bb2dc6aad664a78c85b72d42f69137262db5",
+        "emblem": "a6be356db096b2e9c0e70e96ab18957955b186c3a3bcd938c31a4960ae95652a"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/28_blackharbor-museum.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/28_blackharbor-museum_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/museum",
+      "proposedModuleKey": "museumExchange",
+      "directoryGroup": "Lifestyle & Collectibles",
+      "secondaryEntrypoints": [
+        "Collections → Museum turn-in",
+        "City → Museum"
+      ],
+      "primaryPlacement": "Museum and collection-exchange page: hero above collection sets, progress, donation/turn-in previews, and rewards.",
+      "specialRule": "Keep player-owned display cases and the prestige shop distinct. Turning in a set must consume real owned items once.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-29",
+      "artworkIndex": 29,
+      "name": "Saint Vey Hall",
+      "category": "Community & donations",
+      "tagline": "A stronger city starts somewhere.",
+      "sourceDistrict": "SAINT VEY",
+      "districtDisplayName": "Saint Vey",
+      "districtSlug": "saint-vey",
+      "sourceAssets": {
+        "masterPng": "png/29_saint-vey-hall.png",
+        "webp": "webp/29_saint-vey-hall.webp",
+        "emblemPng": "icons/29_saint-vey-hall_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "163123704d0078d82f8674264e6b2027feae1d937909eb0919da2befcc564c0f",
+        "webp": "9fb494dd7e893b6b18975b28897df752ec4cad2d5b77c0c4c1d0c971de74b989",
+        "emblem": "bca90e66d9f43cf07bbeac2e3f71ff60b96a6646616c342965d86f048b04a74a"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/29_saint-vey-hall.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/29_saint-vey-hall_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/city/community-hall",
+      "proposedModuleKey": "communityHall",
+      "directoryGroup": "City Services",
+      "secondaryEntrypoints": [
+        "City → Community",
+        "Events → Eligible community projects"
+      ],
+      "primaryPlacement": "Community hall: hero above existing civic projects, in-game donations, notices, and community-service actions.",
+      "specialRule": "Do not represent fictional donations as real charity payments or invent rewards from a decorative banner.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-30",
+      "artworkIndex": 30,
+      "name": "City Archives",
+      "category": "Records & intelligence",
+      "tagline": "Every name leaves a trail.",
+      "sourceDistrict": "WARDEN'S GATE",
+      "districtDisplayName": "Warden’s Gate",
+      "districtSlug": "wardens-gate",
+      "sourceAssets": {
+        "masterPng": "png/30_city-archives.png",
+        "webp": "webp/30_city-archives.webp",
+        "emblemPng": "icons/30_city-archives_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "a8f88c3a06b05fae87a103a638506524c269a4822b099f72af9255836180d78b",
+        "webp": "1d46c91c7e3a6ee21b8267d7b20ca326b53dacb65b82ec3e59c59c8c3ecbd358",
+        "emblem": "ac90a8fdf8e77eb28d15790b93bd2c57a6f993747856ad66031adf5bde9d4d48"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/30_city-archives.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/30_city-archives_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/city/archives",
+      "proposedModuleKey": "recordsService",
+      "directoryGroup": "City Services",
+      "secondaryEntrypoints": [
+        "Player search → Public records",
+        "City → Records service"
+      ],
+      "primaryPlacement": "Public records and permitted in-game intelligence service: hero above record-search filters and authorized result panels.",
+      "specialRule": "Never expose staff notes, private messages, protected statistics, security logs, or personal real-world information.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-31",
+      "artworkIndex": 31,
+      "name": "Blackharbor Visitor Center",
+      "category": "City services & guidance",
+      "tagline": "Find your place in the city.",
+      "sourceDistrict": "ASHMARKET",
+      "districtDisplayName": "Ashmarket",
+      "districtSlug": "ashmarket",
+      "sourceAssets": {
+        "masterPng": "png/31_blackharbor-visitor-center.png",
+        "webp": "webp/31_blackharbor-visitor-center.webp",
+        "emblemPng": "icons/31_blackharbor-visitor-center_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "73fa1e053f589bac73960d6d23cdfe97391d21d0f1efaa073f49be499b906bcc",
+        "webp": "00978ad5ba800097237dfec9fd0db4e59843ed8147b43312cadcde3e4f958fe1",
+        "emblem": "37c84585b2d7ad3824a83611017954575f098883174a3545b49e593f8270b0c9"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/31_blackharbor-visitor-center.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/31_blackharbor-visitor-center_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/city/visitor-center",
+      "proposedModuleKey": "visitorCenter",
+      "directoryGroup": "City Services",
+      "secondaryEntrypoints": [
+        "Onboarding → City guide",
+        "Help → Locations"
+      ],
+      "primaryPlacement": "Visitor center: hero above onboarding guidance, district descriptions, service directions, and help navigation.",
+      "specialRule": "Use this for guidance rather than pretending it is a stock-bearing retail shop. Make it reachable early in onboarding.",
+      "requiresDestinationBinding": false,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": true,
+        "cityMapDrawerHero": true,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    },
+    {
+      "id": "gw-location-32",
+      "artworkIndex": 32,
+      "name": "The Veil Market",
+      "category": "Overseas specialist market",
+      "tagline": "Beyond the usual supply lines.",
+      "sourceDistrict": "OVERSEAS NETWORK",
+      "districtDisplayName": "Overseas Network",
+      "districtSlug": null,
+      "sourceAssets": {
+        "masterPng": "png/32_the-veil-market.png",
+        "webp": "webp/32_the-veil-market.webp",
+        "emblemPng": "icons/32_the-veil-market_emblem.png"
+      },
+      "sourceSha256": {
+        "png": "b7a8f67c7c0c1eed1f56c7abd375790ae9263bb0c01dad09fe724a7386ec0f5a",
+        "webp": "5cba1fa129f5ae2f62f881f6da3f39ee20f829ad2977f461fdeee360f79385ff",
+        "emblem": "1b3814e366e2ad6b48538eaadc0c0598d07b73c9043499d8f01308c3fcda36bc"
+      },
+      "publicAssets": {
+        "hero": {
+          "src": "/assets/gore-wars/locations/webp/32_the-veil-market.webp",
+          "width": 1920,
+          "height": 1080,
+          "fit": "contain"
+        },
+        "emblem": {
+          "src": "/assets/gore-wars/locations/icons/32_the-veil-market_emblem.png",
+          "width": 710,
+          "height": 720,
+          "fit": "contain"
+        }
+      },
+      "proposedRouteTemplate": "/travel/[destinationSlug]/markets/the-veil-market",
+      "proposedModuleKey": "overseasSpecialistMarket",
+      "directoryGroup": "Vehicles & Travel",
+      "secondaryEntrypoints": [
+        "Travel → Destination markets",
+        "Overseas → Specialist dealers"
+      ],
+      "primaryPlacement": "Overseas specialist market: hero on each enabled destination’s existing specialist-market page. Resolve destinationSlug from actual destination data and show the live destination separately in HTML.",
+      "specialRule": "OVERSEAS NETWORK is not a Blackharbor district. Do not put a domestic map pin for this location or allow a deep link to bypass travel/location rules.",
+      "requiresDestinationBinding": true,
+      "placements": {
+        "primaryPageHero": true,
+        "directoryCard": true,
+        "domesticCityMapPin": false,
+        "cityMapDrawerHero": false,
+        "sidebar": "emblem only where appropriate navigation already exists",
+        "useAsItemThumbnail": false,
+        "useAsGlobalBackground": false
+      },
+      "accessPolicy": "Use the existing authoritative server policy; artwork metadata grants no access.",
+      "implementationBinding": {
+        "existingRoute": null,
+        "existingModuleId": null,
+        "verification": "pending repository inspection"
+      }
+    }
+  ]
+}
