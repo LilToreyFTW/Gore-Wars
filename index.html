@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d1116" />
+  <title>Gore-Wars — Build your name. Take the city.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <button class="brand" data-view="overview" aria-label="Go to overview"><span class="brand-mark">GW</span><span>GORE-WARS<small>BLACKHARBOR // ONLINE</small></span></button>
+      <div class="top-actions"><button class="icon-btn" id="commandBtn" aria-label="Open command menu">⌘K</button><button class="avatar" aria-label="Open profile">NV</button></div>
+    </header>
+    <div class="app-grid">
+      <aside class="sidebar">
+        <div class="player-mini"><div class="portrait">NV</div><div><strong id="navName">Nora Vale</strong><span>Level <b id="navLevel">3</b> · New blood</span></div></div>
+        <nav aria-label="Primary navigation">
+          <button class="nav-item active" data-view="overview"><span>◈</span>Overview</button>
+          <button class="nav-item" data-view="city"><span>⌖</span>City map</button>
+          <button class="nav-item" data-view="crimes"><span>⚒</span>Crimes <em>2</em></button>
+          <button class="nav-item" data-view="gym"><span>✦</span>Gym</button>
+          <button class="nav-item" data-view="inventory"><span>▣</span>Inventory</button>
+          <button class="nav-item" data-view="missions"><span>◆</span>Missions <em>1</em></button>
+          <button class="nav-item" data-view="market"><span>⌘</span>Market</button>
+        </nav>
+        <div class="sidebar-foot"><div class="status-dot"></div><span>All systems nominal</span><button id="resetBtn" class="text-btn">Reset save</button></div>
+      </aside>
+      <main class="main" id="main"></main>
+    </div>
+  </div>
+  <div class="toast-region" id="toasts" aria-live="polite"></div>
+  <div class="auth-gate" id="authGate" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="auth-card"><div class="brand-mark">GW</div><div class="eyebrow">BLACKHARBOR // ACCESS</div><h1 id="authTitle">Build your name.</h1><p>Create a persistent operative account to enter the city. Your Google identity will be used for sign-in and recovery.</p><label class="name-label" for="accountName">Your game name</label><input class="name-input" id="accountName" maxlength="24" placeholder="e.g. Nora Vale" autocomplete="nickname"/><button class="google-btn" id="googleSignIn"><span class="google-g">G</span><span>Continue with Google</span></button><div class="auth-divider"><span>prototype mode</span></div><button class="btn secondary" id="demoAccount">Use local demo account</button><small class="auth-note">Your numeric player ID is generated once and displayed as <b>Name [1234567]</b>. Google OAuth requires a configured server client ID.</small></div></div>
+  <div class="modal hidden" id="commandModal" role="dialog" aria-modal="true" aria-label="Command menu"><div class="modal-card"><div class="modal-head"><strong>Command menu</strong><button class="close" id="closeCommand">×</button></div><input id="commandInput" placeholder="Jump to a page or action…"/><div class="command-list"><button data-command="overview">Open overview <kbd>O</kbd></button><button data-command="crimes">Run a crime <kbd>C</kbd></button><button data-command="gym">Train at gym <kbd>G</kbd></button><button data-command="inventory">Open inventory <kbd>I</kbd></button></div></div></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

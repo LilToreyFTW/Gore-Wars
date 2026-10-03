@@ -1,0 +1,68 @@
+﻿reference_id,page_title,public_url,gore_wars_feature_scope,review_scope_and_limit,consulted_date
+W01,Profiles,https://wiki.torn.com/wiki/Profiles,"Profiles, galleries, actions, honors, signatures",Core profile page reviewed; public/private projection is original design.,2026-10-03
+W02,Main Page,https://wiki.torn.com/wiki/Main_Page,"Source reliability, major system navigation",Overview reviewed; wiki warns that information may be inaccurate/outdated.,2026-10-03
+W03,All Pages index,https://wiki.torn.com/wiki/Special:AllPages,Whole-wiki discovery and redirects,Initial index consulted only; complete pagination is not claimed.,2026-10-03
+W04,Down To Details,https://wiki.torn.com/wiki/Down_To_Details,System discovery and city services,Overview/directory reviewed; linked catalogs need separate audits.,2026-10-03
+W05,City,https://wiki.torn.com/wiki/City,Interactive map and service categories,System page consulted; detailed map parity not verified.,2026-10-03
+W06,Preferences,https://wiki.torn.com/wiki/Preferences,"Account preferences, security, interface settings",Overview reviewed; Gore-Wars uses original security requirements.,2026-10-03
+W07,Sidebar,https://wiki.torn.com/wiki/Sidebar,Navigation and status indicators,Navigation overview consulted.,2026-10-03
+W08,Categories index,https://wiki.torn.com/wiki/Special:Categories,Category discovery,Initial category listing consulted only; pagination incomplete.,2026-10-03
+W09,Crimes 2.0,https://wiki.torn.com/wiki/Crimes_2.0,Modern individual crime framework and families,Overview reviewed; mixed historical/current notes require subfeature checks.,2026-10-03
+W10a,Cracking,https://wiki.torn.com/wiki/Cracking,"Fictional rig, cooling, and persistent puzzle projects",Core mechanics reviewed; Gore-Wars uses original simulated tasks and tuning.,2026-10-03
+W10b,Scamming,https://wiki.torn.com/wiki/Scamming,Persistent NPC confidence-board activity,Core overview consulted; no real scam content is reproduced.,2026-10-03
+W11,Gym,https://wiki.torn.com/wiki/Gym,"Training memberships, specialization, progression",System page reviewed; empirical/historical formulas are not assumed exact.,2026-10-03
+W12,Battle Stats,https://wiki.torn.com/wiki/Battle_Stats,Combat attribute roles and modifier families,Core roles reviewed; original Gore-Wars names/equations differ.,2026-10-03
+W13,Awards,https://wiki.torn.com/wiki/Awards,"Medals, honors, eligibility, historical awards",Catalog overview consulted; full award list not audited; outdated-content warning noted.,2026-10-03
+W14,Merits,https://wiki.torn.com/wiki/Merits,"Perks, costs, respecs",System overview consulted; original Legacy Point implementation required.,2026-10-03
+W15,Attack,https://wiki.torn.com/wiki/Attack,"Combat lifecycle, actions, finishing, restrictions",Core combat sections reviewed; hidden/empirical formulas not verified.,2026-10-03
+W16,Weapon Bonus,https://wiki.torn.com/wiki/Weapon_Bonus,Equipment effect families,Catalog consulted; all bonus rows not exhaustively extracted.,2026-10-03
+W17,Weapon Mod,https://wiki.torn.com/wiki/Weapon_Mod,Attachments and compatibility,Catalog consulted; all modifier values not exhaustively verified.,2026-10-03
+W18,Item,https://wiki.torn.com/wiki/Item,"Categories, ownership, usability, legacy categories",Core categorization reviewed; individual item catalog is not fully audited.,2026-10-03
+W19,Hospital,https://wiki.torn.com/wiki/Hospital,"Injuries, recovery, medical access",System page consulted; original recovery values required.,2026-10-03
+W20,Bounty,https://wiki.torn.com/wiki/Bounty,"Posting, eligibility, rewards",System page consulted; Gore-Wars adds original abuse controls.,2026-10-03
+W21,Revive,https://wiki.torn.com/wiki/Revive,"Medical skill, permissions, repeated service",Core mechanics reviewed; original rules must be documented.,2026-10-03
+W22,Jail,https://wiki.torn.com/wiki/Jail,"Sentences, busts, bail, restrictions",System page consulted; detailed probabilities not claimed verified.,2026-10-03
+W23,Drugs,https://wiki.torn.com/wiki/Drugs,"Game-only consumables, dependency, cooldowns, rehab","System page reviewed as fictional gameplay, not medical evidence.",2026-10-03
+W24,Point,https://wiki.torn.com/wiki/Point,"Earned utility currency, licenses, refills, lists",Core utility catalog reviewed; historical notes must be separated.,2026-10-03
+W25,Book,https://wiki.torn.com/wiki/Book,Timed study consumables and restrictions,Catalog overview consulted; no original descriptions copied.,2026-10-03
+W26,Big Al's Bunker,https://wiki.torn.com/wiki/Big_Al's_Bunker,Advanced-equipment recycling and exchange,System page consulted; Iron Vault is original branding/design.,2026-10-03
+W27,Dump,https://wiki.torn.com/wiki/Dump,Discarded-item search and circulation,System page consulted; original anti-transfer-abuse rules added.,2026-10-03
+W28,Item Market,https://wiki.torn.com/wiki/Item_Market,"Current central listings, filters, quantity purchases",Core current/historical distinction reviewed; original fees differ.,2026-10-03
+W29,Bazaar,https://wiki.torn.com/wiki/Bazaar,Player storefronts and directory,Core overview reviewed; separate from central market.,2026-10-03
+W30,Trade,https://wiki.torn.com/wiki/Trade,Direct trade and asset exchange,System page consulted; original versioned escrow specified.,2026-10-03
+W31,Auction House,https://wiki.torn.com/wiki/Auction_House,"Proxy bidding, escrow, closing, payouts",Core auction overview reviewed; Gore-Wars settlement rules are original.,2026-10-03
+W32,Bank,https://wiki.torn.com/wiki/Bank,"Term deposits, claims, protected/available funds",Core overview reviewed; original term and payout values required.,2026-10-03
+W33,Loan Shark,https://wiki.torn.com/wiki/Loan_Shark,"Borrowing, repayment, creditworthiness",Core and historical distinction reviewed; bounded original debt rules.,2026-10-03
+W34,Stock Market,https://wiki.torn.com/wiki/Stock_Market,"Shares, holding benefits, dividends",System overview reviewed; Gore-Wars uses an original simulated market.,2026-10-03
+W35,Mission,https://wiki.torn.com/wiki/Mission,"Contacts, objectives, mission rewards/shop",System page consulted; original narrative content required.,2026-10-03
+W36,New Player Missions,https://wiki.torn.com/wiki/New_Player_Missions,Onboarding and chained objectives,Long mission catalog consulted; not exhaustively extracted.,2026-10-03
+W37,Jobs,https://wiki.torn.com/wiki/Jobs,"Starter careers, ranks, job points",System page consulted; original careers/qualifications defined.,2026-10-03
+W38,Company,https://wiki.torn.com/wiki/Company,"Ownership, staffing, finance, ratings",Core management sections reviewed; complete rule audit remains granular.,2026-10-03
+W39,Company List,https://wiki.torn.com/wiki/Company/Company_List,Business configurations and requirements,Large catalog opened; exhaustive row-by-row parity audit not completed.,2026-10-03
+W40,Company Special List,https://wiki.torn.com/wiki/Company/Special_List,Active and passive employment abilities,Catalog opened; original benefit balance required.,2026-10-03
+W41,Education,https://wiki.torn.com/wiki/Education,"Courses, prerequisites, qualifications",System overview consulted; all course subpages not audited.,2026-10-03
+W42,Property,https://wiki.torn.com/wiki/Property,"Ownership, upgrades, staff, rentals",Long property page consulted; original tier data required.,2026-10-03
+W43,Marriage,https://wiki.torn.com/wiki/Marriage,Partnership and household features,System page consulted; original consent/ownership policy specified.,2026-10-03
+W44,Church,https://wiki.torn.com/wiki/Church,Ceremonial and related city activities,System page consulted; Gore-Wars venues and participation policy are original.,2026-10-03
+W45,Faction,https://wiki.torn.com/wiki/Faction,"Governance, resources, upgrades, organizational systems",Substantial core sections reviewed; all historical subpages not audited.,2026-10-03
+W46,Organized Crime 2.0,https://wiki.torn.com/wiki/Organized_Crime_2.0,"Roles, planning, execution, tool/material distinctions, payouts",Core lifecycle reviewed; page marks itself temporary/in progress.,2026-10-03
+W47,Ranked War,https://wiki.torn.com/wiki/Ranked_War,"Matchmaking, rosters, schedules, scoring",Core overview reviewed; proprietary matchmaking is not known.,2026-10-03
+W48,Territory,https://wiki.torn.com/wiki/Territory,"Territory ownership, adjacency, conflict",System page consulted; original Blackharbor graph required.,2026-10-03
+W49,Racket,https://wiki.torn.com/wiki/Racket,Temporary territory-linked reward ventures,System overview consulted.,2026-10-03
+W50,Travel,https://wiki.torn.com/wiki/Travel,"Destinations, transport, cargo, overseas activity",System page consulted; current restrictions need detailed verification.,2026-10-03
+W51,Hunting,https://wiki.torn.com/wiki/Hunting,Destination skill activity and progression,Core mechanics reviewed; original places and tuning required.,2026-10-03
+W52,Raceway,https://wiki.torn.com/wiki/Raceway,"Vehicles, classes, race modes, standings",System page consulted; individual vehicle/track catalog not audited.,2026-10-03
+W53,Casino,https://wiki.torn.com/wiki/Casino,"Game families, play tokens, exclusions",Core lobby overview reviewed; current/retired modes distinguished.,2026-10-03
+W54,Poker,https://wiki.torn.com/wiki/Poker,"Table play, participation, reconnect, planned features",Core table overview reviewed; announced extras not treated as released.,2026-10-03
+W55,Museum,https://wiki.torn.com/wiki/Museum,Collections and exchange sinks,System page consulted; all item sets not exhaustively audited.,2026-10-03
+W56,Annual Competition,https://wiki.torn.com/wiki/Annual_Competition,Current/retired event families and calendar,Core event directory reviewed; no dates inferred from old entries.,2026-10-03
+W57,Christmas Town,https://wiki.torn.com/wiki/Christmas_Town,"Player-made maps, quests, collectibles, minigames",Core exploration/reward sections reviewed; historic scheduling notes not current guarantees.,2026-10-03
+W58,Newspaper,https://wiki.torn.com/wiki/Newspaper,"Editorial submissions, archives, classifieds",Core newspaper sections reviewed; original publication branding required.,2026-10-03
+W59,Forums,https://wiki.torn.com/wiki/Forums,"Community boards, private boards, posting/search",Core forum sections reviewed; original moderation policy specified.,2026-10-03
+W60,Messages,https://wiki.torn.com/wiki/Messages,Mail and social communication,System page consulted.,2026-10-03
+W61,Chat Boxes,https://wiki.torn.com/wiki/Chat_Boxes,Chat discovery and social rules link,Page is a short rules-link stub; detailed chat UX is original specification.,2026-10-03
+W62,API,https://wiki.torn.com/wiki/API,Developer access and scope concept,System page consulted; Gore-Wars API and auth are original.,2026-10-03
+W63,Donator,https://wiki.torn.com/wiki/Donator,Membership reference category,System page consulted; monetization deliberately differs.,2026-10-03
+W64,Activity Log,https://wiki.torn.com/wiki/Activity_Log,Personal activity history,System page consulted; complete log-event catalog not audited.,2026-10-03
+W65,Reports,https://wiki.torn.com/wiki/Reports,"Player reports, evidence, bug workflows, appeals",Core page reviewed; Gore-Wars adds immediate newcomer access.,2026-10-03
+W66,Hall of Fame,https://wiki.torn.com/wiki/Hall_of_Fame,"Rankings, personal position, movement over time",Core ranking overview reviewed; original metrics/privacy rules required.,2026-10-03
