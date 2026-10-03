@@ -28,9 +28,12 @@ GOOGLE_CLIENT_ID=...apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=...
 GOOGLE_REDIRECT_URI=https://gore-wars.vercel.app/api/auth/google/callback
 SESSION_SECRET=<long random private value>
+OWNER_GOOGLE_EMAIL=<the verified owner Google email>
 ```
 
 In Google Cloud, the authorized JavaScript origin is `https://gore-wars.vercel.app` and the authorized redirect URI is exactly `https://gore-wars.vercel.app/api/auth/google/callback`. Redeploy after changing either Google settings or Vercel variables.
+
+The owner role is granted only after Google reports a verified email that exactly matches `OWNER_GOOGLE_EMAIL`. The owner profile is normalized to `Lil Torey [5447921]`; typing that name in the local demo cannot grant ownership.
 
 ## Account entry
 

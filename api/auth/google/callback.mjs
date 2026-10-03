@@ -14,6 +14,10 @@ export default async function handler(req, res) {
   if (!tokenResponse.ok) return res.status(502).send('Google token exchange failed. Check the OAuth redirect URI and Vercel environment variables.');
   const token = await tokenResponse.json(); const profileResponse = await fetch('https://openidconnect.googleapis.com/v1/userinfo', { headers: { authorization: `Bearer ${token.access_token}` } });
   if (!profileResponse.ok) return res.status(502).send('Google profile lookup failed.'); const profile = await profileResponse.json();
-  const player = { playerId: playerId(profile.sub), name: profile.name || profile.email?.split('@')[0] || 'New Operative', email: profile.email, picture: profile.picture, provider: 'google' };
+  const verifiedEmail = String(profile.email || '').trim().toLowerCase();
+  if (profile.email_verified !== true) return res.status(403).send('Google account email is not verified.');
+  const ownerEmail = String(process.env.OWNER_GOOGLE_EMAIL || '').trim().toLowerCase();
+  const isOwner = Boolean(ownerEmail) && verifiedEmail === ownerEmail;
+  const player = { playerId: isOwner ? '5447921' : playerId(profile.sub), name: isOwner ? 'Lil Torey' : (profile.name || verifiedEmail.split('@')[0] || 'New Operative'), email: verifiedEmail, picture: profile.picture, provider: 'google', role: isOwner ? 'owner' : 'player' };
   res.setHeader('Set-Cookie', [`gw_session=${session(player)}; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax; ${origin.startsWith('https:') ? 'Secure;' : ''}`, 'gw_oauth_state=; Max-Age=0; Path=/; HttpOnly; SameSite=Lax']); res.redirect('/?auth=success');
 }
