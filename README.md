@@ -17,6 +17,8 @@ The API foundation runs separately on `http://localhost:8787` and currently prov
 
 The supplied Blackharbor key art is used as the account-entry backdrop and is tracked in [ASSETS.md](H:\Gore-Wars\ASSETS.md) as development/reference artwork.
 
+Google credential JSON files are ignored by Git. Store their values in Vercel environment variables; never commit the JSON file.
+
 ## Account entry
 
 New visitors see the account gate. **Continue with Google** is the production entry point, but requires a server-side Google OAuth client ID, redirect handler, verified callback, and secure session cookie. The included local demo button is only for previewing the slice and never accepts Google credentials.

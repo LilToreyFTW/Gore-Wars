@@ -1,0 +1,10 @@
+# Local secrets and credentials
+*.env
+*.env.*
+!*.env.example
+client_secret_*.json
+
+# Runtime data
+data/game.json
+node_modules/
+.vercel/
