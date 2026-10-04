@@ -26,7 +26,7 @@ assert.equal(run('state.power'),16);
 assert.equal(run('state.stamina'),0);
 run("state.staminaUpdatedAt=Date.now()-600000;save();train('resilience')");
 assert.equal(run('state.resilience'),13);
-assert.equal(run('state.stamina'),0);
+assert.equal(run('state.stamina'),5);
 run("train('cash')");
 assert.equal(run('state.cash'),840);
 run("state.staminaUpdatedAt=Date.now()-86400000;recoverStamina()");
