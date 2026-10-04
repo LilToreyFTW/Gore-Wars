@@ -5,6 +5,7 @@ function load(){try{const saved={...defaultState,...JSON.parse(localStorage.getI
 let state = load(); let view = 'overview'; let selectedShop = null;
 const AUTH_KEY = 'gore-wars-auth-v1';
 function save(){localStorage.setItem(SAVE_KEY,JSON.stringify(state))}
+function accountAge(){const started=Number(state.accountCreatedAt)||Date.now();const elapsed=Math.max(0,Date.now()-started);const minutes=Math.floor(elapsed/60000);const days=Math.floor(minutes/1440);const hours=Math.floor((minutes%1440)/60);const mins=minutes%60;const parts=[];if(days)parts.push(days+'d');if(hours||days)parts.push(hours+'h');parts.push(mins+'m');return 'Started '+new Date(started).toLocaleString()+' · '+parts.join(' ')}
 function isOwner(){return state.role==='owner'}
 function money(n){return `${n.toLocaleString()} cr`}
 function walletLabel(){return isOwner()?'UNLIMITED cr':money(state.cash)}
