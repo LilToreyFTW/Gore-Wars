@@ -5,7 +5,7 @@ const source=readFileSync(new URL('../app.js',import.meta.url),'utf8');
 const storage=new Map();
 const context=vm.createContext({
  localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
- structuredClone,console,Date
+ structuredClone,console,Date,URLSearchParams,location:{search:''}
 });
 vm.runInContext(source.slice(0,source.indexOf('function itemAsset')),context);
 vm.runInContext(`
