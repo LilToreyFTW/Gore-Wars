@@ -173,7 +173,7 @@ function train(stat){
   recoverStamina();
   if(!spend('stamina',10)){save();render();return}
   state[stat]++;state.trained++;state.xp+=5;
-  const statName=battleStats.find(x=>x[0]===stat)?.[1]||stat;addActivity('✦','Training complete',`+1 ${statName} · 10 Energy`);
+  const statName=(typeof battleStats!=='undefined'&&battleStats.find(x=>x[0]===stat)?.[1])||stat;addActivity('✦','Training complete',`+1 ${statName} · 10 Energy`);
   save();
  }catch(error){state=previous;toast('Training could not be saved. Please free browser storage and try again.');render();return}
  toast(`Saved: +1 ${statName}. ${state.stamina} Energy remaining.`);render();
