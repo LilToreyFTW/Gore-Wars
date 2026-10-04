@@ -2,5 +2,11 @@
   "name": "gore-wars",
   "version": "0.1.0",
   "private": true,
-  "scripts": { "dev": "npx serve .", "api": "node apps/api/server.mjs", "test": "node tests/smoke.mjs", "test:api": "node tests/api-smoke.mjs" }
+  "scripts": {
+    "dev": "npx serve .",
+    "api": "node apps/api/server.mjs",
+    "test": "node tests/smoke.mjs",
+    "test:api": "node tests/api-smoke.mjs",
+    "test:gym": "node tests/gym-system.mjs"
+  }
 }
