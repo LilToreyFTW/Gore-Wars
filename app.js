@@ -176,7 +176,7 @@ function train(stat){
   const statName=(typeof battleStats!=='undefined'&&battleStats.find(x=>x[0]===stat)?.[1])||stat;addActivity('✦','Training complete',`+1 ${statName} · 10 Energy`);
   save();
  }catch(error){state=previous;toast('Training could not be saved. Please free browser storage and try again.');render();return}
- toast(`Saved: +1 ${statName}. ${state.stamina} Energy remaining.`);render();
+ toast(`Saved: +1 ${(typeof battleStats!=='undefined'&&battleStats.find(x=>x[0]===stat)?.[1])||stat}. ${state.stamina} Energy remaining.`);render();
 }
 function addInventoryItem(name,price,type,icon='◈'){const existing=state.inventory.find(i=>i.name===name);if(existing){existing.qty++;if(existing.maxUses)existing.uses=existing.maxUses}else{const maxUses=type==='Ammunition'?1:type==='Tool'?5:type==='Weapon'?20:type==='Armor'?30:3;state.inventory.push({id:'item-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,icon,qty:1,rarity:'Common',type,price,maxUses,uses:maxUses})}}
 function buy(price){if(!isOwner()&&state.cash<price){toast('Not enough cash.');return}if(!isOwner())state.cash-=price;addInventoryItem('Market purchase',price,'Market item','◫');addActivity('⌘','Market purchase',`Settled atomically for ${money(price)}`);toast('Purchase saved to Items inventory.');save();render()}
