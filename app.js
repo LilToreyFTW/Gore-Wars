@@ -6,7 +6,7 @@ let state = load(); let publicProfileId=new URLSearchParams(location.search).get
 const AUTH_KEY = 'gore-wars-auth-v1';
 let activePlayerId = null;
 const TRAINING_STATS = ['power','resilience','reflexes','precision'];
-const STAMINA_INTERVAL = 60000; // One stamina per minute, including time away.
+const STAMINA_INTERVAL = 180000; // Standard: 5 Energy every 15 minutes.
 const PLAYER_INDEX_KEY='gore-wars-players-v1';
 function playerSaveKey(id){return SAVE_KEY+':player:'+id}
 function readPlayerIndex(){try{const list=JSON.parse(localStorage.getItem(PLAYER_INDEX_KEY)||'[]');return Array.isArray(list)?list:[]}catch{return[]}}
@@ -38,15 +38,15 @@ function startPresence(){state.onlineSince=Date.now();state.lastSeenAt=state.onl
 function checkpointPresence(now=Date.now()){if(!activePlayerId||!state.onlineSince)return;const seconds=Math.max(0,Math.floor((now-state.onlineSince)/1000));if(seconds){state.onlineSeconds=(Number(state.onlineSeconds)||0)+seconds;state.onlineSince=now}state.lastSeenAt=now}
 function endPresence(){if(!activePlayerId||!state.onlineSince)return;const now=Date.now();const seconds=Math.max(0,Math.floor((now-state.onlineSince)/1000));state.onlineSeconds=(Number(state.onlineSeconds)||0)+seconds;state.lastSeenAt=now;state.presenceLog=Array.isArray(state.presenceLog)?state.presenceLog:[];state.presenceLog.push({status:'offline',at:now,durationSeconds:seconds});state.presenceLog=state.presenceLog.slice(-40);state.onlineSince=null;save()}
 function recoverStamina(now=Date.now()){
- if(!Number.isFinite(state.maxStamina)||state.maxStamina<=0)state.maxStamina=100;
+ const donator=state.donator?.days>0;if(donator)state.maxStamina=Math.max(150,state.maxStamina||0);if(!Number.isFinite(state.maxStamina)||state.maxStamina<=0)state.maxStamina=100;
  if(!Number.isFinite(state.stamina))state.stamina=defaultState.stamina;
  state.stamina=Math.max(0,Math.min(state.maxStamina,state.stamina));
  if(!Number.isFinite(state.staminaUpdatedAt)||state.staminaUpdatedAt>now)state.staminaUpdatedAt=now;
  if(state.stamina>=state.maxStamina){state.staminaUpdatedAt=now;return false}
- const ticks=Math.floor((now-state.staminaUpdatedAt)/STAMINA_INTERVAL);
+ const interval=donator?120000:STAMINA_INTERVAL;const ticks=Math.floor((now-state.staminaUpdatedAt)/interval);
  if(ticks<1)return false;
- state.stamina=Math.min(state.maxStamina,state.stamina+ticks);
- state.staminaUpdatedAt=state.stamina===state.maxStamina?now:state.staminaUpdatedAt+ticks*STAMINA_INTERVAL;
+ state.stamina=Math.min(state.maxStamina,state.stamina+ticks*5);
+ state.staminaUpdatedAt=state.stamina===state.maxStamina?now:state.staminaUpdatedAt+ticks*interval;
  return true;
 }
 function itemAsset(name){return 'assets/items/'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.png'}
