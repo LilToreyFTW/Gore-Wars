@@ -10,6 +10,7 @@
     "test:gym": "node tests/gym-system.mjs",
     "test:features": "node tests/property-newspaper-hospital.mjs",
     "test:casino": "node tests/casino-system.mjs",
-    "test:forums": "node tests/forum-system.mjs"
+    "test:forums": "node tests/forum-system.mjs",
+    "test:navigation": "node tests/route-audit.mjs"
   }
 }
