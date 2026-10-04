@@ -11,14 +11,14 @@
   <div class="shell">
     <header class="topbar">
       <button class="brand" data-view="overview" aria-label="Go to overview"><span class="brand-mark">GW</span><span>GORE-WARS<small>BLACKHARBOR // ONLINE</small></span></button>
-      <div class="top-actions"><button class="icon-btn" id="commandBtn" aria-label="Open command menu">⌘K</button><button class="avatar" aria-label="Open profile">NV</button></div>
+      <div class="top-actions"><button class="icon-btn" id="commandBtn" aria-label="Open command menu">⌘K</button><button class="avatar" aria-label="Open profile" onclick="window.openProfilePage&&window.openProfilePage(); return false;">NV</button></div>
     </header>
     <div class="app-grid">
       <aside class="sidebar">
-        <button class="player-mini profile-link" data-view="profile" aria-label="Open your player profile"><div class="presence-dot online" aria-hidden="true"></div><div class="portrait">NV</div><div><strong id="navName">Nora Vale</strong><span>Level <b id="navLevel">3</b> · New blood</span></div></button>
+        <button class="player-mini profile-link" data-view="profile" onclick="window.openProfilePage&&window.openProfilePage(); return false;" aria-label="Open your player profile"><div class="presence-dot online" aria-hidden="true"></div><div class="portrait">NV</div><div><strong id="navName">Nora Vale</strong><span>Level <b id="navLevel">3</b> · New blood</span></div></button>
         <nav aria-label="Primary navigation">
           <button class="nav-item active" data-view="overview"><span>◈</span>Overview</button>
-          <button class="nav-item" data-view="profile"><span>♙</span>Profile</button>
+          <button class="nav-item" data-view="profile" onclick="window.openProfilePage&&window.openProfilePage(); return false;"><span>♙</span>Profile</button>
           <button class="nav-item" data-view="factions"><span>⚑</span>Factions</button>
           <button class="nav-item owner-only-nav" data-view="owner"><span>♛</span>Owner cheats</button>
           <button class="nav-item" data-view="city"><span>⌖</span>City map</button>
