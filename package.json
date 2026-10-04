@@ -7,6 +7,7 @@
     "api": "node apps/api/server.mjs",
     "test": "node tests/smoke.mjs",
     "test:api": "node tests/api-smoke.mjs",
-    "test:gym": "node tests/gym-system.mjs"
+    "test:gym": "node tests/gym-system.mjs",
+    "test:features": "node tests/property-newspaper-hospital.mjs"
   }
 }

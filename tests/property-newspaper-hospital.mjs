@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+
+const source=readFileSync(new URL('../app.js',import.meta.url),'utf8');
+const stop=source.indexOf('const itemCategories=');
+const storage=new Map();
+const context=vm.createContext({localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},structuredClone,console,Date,URLSearchParams,location:{search:''},setTimeout,Math,document:{createElement:()=>({remove(){}}),getElementById:()=>({append(){},classList:{add(){},remove(){}}})}});
+vm.runInContext(source.slice(0,stop),context);
+const run=code=>vm.runInContext(code,context);
+run("toast=()=>{};render=()=>{};activePlayerId='feature-test';state={...structuredClone(defaultState),playerId:'7654321',name:'Feature Tester',cash:100000000,stamina:100,nerve:30,morale:100};save=()=>{};");
+assert.equal(run("propertyHomeInfo().name"),'Shack');
+run("buyProperty('trailer'); moveIntoProperty('trailer');");
+assert.equal(run("propertyHomeInfo().name"),'Trailer');
+assert.equal(run('state.cash'),99995000);
+run("upgradeProperty('interior');");
+assert.ok(run('propertyMaxHappy()')>110);
+run("sendToJail(10,'Failed crime')");
+assert.equal(run('inJail()'),true);
+assert.match(run('jailPage()'),/You are in custody/);
+run("state.jailUntil=0; sendToHospital(10,'Combat injuries')");
+assert.equal(run('inHospital()'),true);
+assert.match(run('hospitalPage()'),/Under medical care/);
+run("state.hospitalUntil=0; newspaperTab='front';");
+assert.match(run('newspaperPage()'),/Gore-Wars City Times/);
+run("ensureNewspaperData().classifieds.push({title:'Dock sale',body:'Tools',author:'Feature Tester',createdAt:Date.now()}); newspaperTab='classifieds';");
+assert.match(run('newspaperPage()'),/Dock sale/);
+console.log('Property, Jail, Hospital, and Newspaper feature smoke passed.');
