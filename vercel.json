@@ -1,0 +1,3 @@
+{
+  "rewrites": [{"source": "/profiles.php", "destination": "/index.html"}]
+}
